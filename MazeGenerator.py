@@ -108,11 +108,11 @@ class MazeGenerator:
             if cell['n_n'] == 1:
                 empty[3*column][3*row+1] = 1
                 empty[3*column][3*row+2] = 1
-                
+
             if cell["w_n"] == 1:
                 empty[3*column+1][3*row] = 1
                 empty[3*column+2][3*row] = 1
-                
+
             if cell['s_n'] == 1:
                 empty[3*column+3][3*row+1] = 1
                 empty[3*column+3][3*row+2] = 1
@@ -124,10 +124,3 @@ class MazeGenerator:
 
 
 # %%
-generator = MazeGenerator()
-maze = generator.createMaze(30, 4)
-for cell in maze:
-    print(cell)
-maze = generator.showMaze(maze)
-# %%
-plt.imshow(maze)
