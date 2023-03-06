@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+
+
 class MazeSolver:
     def __init__(self, maze):
         self.start = (1, 1)
@@ -38,17 +40,11 @@ class MazeSolver:
                     else:
                         self.s_stack.pop()
                         self.current = self.s_stack[-1]
+        self.maze[self.current] = 4
 
     def solve(self):
 
         while self.current != self.end:
-
-            if self.current in self.history:
-                self.s_stack.pop()
-                self.current = self.s_stack[-1]
-                self.try_to_go()
-            else:
-                self.try_to_go()
-
+            self.try_to_go()
             self.maze[self.current] = 4
-        return self.maze
+        return self.maze, self.history
