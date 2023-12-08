@@ -12,9 +12,9 @@ class Cell:
 class MazeGenerator:
 
     def __init__(self):
-        pass
+        self.mWidth = 0
 
-    def createMaze(self, mWidth, mHeight):
+    def create_maze(self, mWidth, mHeight):
         self.mWidth = mWidth
         self.mHeight = mHeight
         self.visited = 1
